@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  SmartCar to ABRP connection
+</h1>
+{% if running %}
+<h2 class="subtitle">
+  Already running
+</h2>
+<a href="{{ url_for('main.run') }}" class="button is-danger">
+  Stop running
+</a>
+
+{% endif %}
+{% if not running %}
+<a href="{{ url_for('main.run') }}" class="button is-success">
+  Start running
+</a>
+
+{% endif %}
+{% endblock %}
